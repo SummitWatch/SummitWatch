@@ -1,49 +1,5 @@
 [
   {
-    "name": "CIO Florida",
-    "host": "Citrus Events",
-    "hostUrl": "https://www.citrusevents.net",
-    "url": "https://www.citrusevents.net/cioflorida",
-    "city": "Fort Lauderdale",
-    "country": "United States",
-    "year": 2026,
-    "month": 5,
-    "role": "CIO"
-  },
-  {
-    "name": "New York CIO Executive Summit",
-    "host": "Evanta",
-    "hostUrl": "https://www.evanta.com",
-    "url": "https://www.evanta.com/cio/new-york/new-york-cio-executive-summit-8442",
-    "city": "New York",
-    "country": "United States",
-    "year": 2026,
-    "month": 6,
-    "role": "CIO"
-  },
-  {
-    "name": "New York CISO Executive Summit",
-    "host": "Evanta",
-    "hostUrl": "https://www.evanta.com",
-    "url": "https://www.evanta.com/ciso/new-york/new-york-ciso-executive-summit-8439",
-    "city": "New York",
-    "country": "United States",
-    "year": 2026,
-    "month": 6,
-    "role": "CISO"
-  },
-  {
-    "name": "Boston CISO Executive Summit",
-    "host": "Evanta",
-    "hostUrl": "https://www.evanta.com",
-    "url": "https://www.evanta.com/ciso/boston/boston-ciso-executive-summit-7226",
-    "city": "Boston",
-    "country": "United States",
-    "year": 2026,
-    "month": 6,
-    "role": "CISO"
-  },
-  {
     "name": "CIO Scotland",
     "host": "Citrus Events",
     "hostUrl": "https://www.citrusevents.net",
@@ -52,18 +8,8 @@
     "country": "United Kingdom",
     "year": 2026,
     "month": 9,
+    "day": 15,
     "role": "CIO"
-  },
-  {
-    "name": "Ivalua Summit \u2014 Procurement Innovation on Tour",
-    "host": "Executive Leaders Network",
-    "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/ivalua-summit-new-york-q3-26",
-    "city": "New York",
-    "country": "United States",
-    "year": 2026,
-    "month": 9,
-    "role": "CPO"
   },
   {
     "name": "Cyber Resilience in the Age of AI",
@@ -74,171 +20,7 @@
     "country": "Germany",
     "year": 2026,
     "month": 9,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "CxO Institute \u2014 Palo Alto",
-    "host": "CxO Institute",
-    "hostUrl": "https://cxo-institute.com",
-    "url": "https://cxo-institute.com/upcoming-events/",
-    "city": "Palo Alto",
-    "country": "United States",
-    "year": 2026,
-    "month": 9,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Unlock Secure AI: Copilot, Purview & XDR in 1 Day",
-    "host": "Executive Leaders Network",
-    "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/softwerx-summit-cambridge-q3-26",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 9,
-    "role": "CISO"
-  },
-  {
-    "name": "An Exclusive Event for Data Leaders",
-    "host": "Executive Leaders Network",
-    "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/precisely-summit-london-q3-26",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 9,
-    "role": "CIO"
-  },
-  {
-    "name": "The Executive Security Breakfast",
-    "host": "Executive Leaders Network",
-    "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/softwerx-executive-breakfast-london-q3-26",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 9,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Global CIO & CISO Executive Summit",
-    "host": "Evanta",
-    "hostUrl": "https://www.evanta.com",
-    "url": "https://www.evanta.com/cio/global/global-cio-executive-summit-8435",
-    "city": "Monarch Beach, CA",
-    "country": "United States",
-    "year": 2026,
-    "month": 9,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "TechLeaders Insight Summit \u2014 Autumn Edition",
-    "host": "GDS Group",
-    "hostUrl": "https://gdsgroup.com",
-    "url": "https://gdsgroup.com/events/physical-summit/tech-leaders-insight-summit-autumn-edition/",
-    "city": "Dublin",
-    "country": "Ireland",
-    "year": 2026,
-    "month": 10,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Cloudflare Immerse Stockholm 2026",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/cloudflare-immerse-stockholm-2026",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "year": 2026,
-    "month": 5,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Cloudflare Immerse Paris 2026",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/cloudflare-immerse-paris-2026",
-    "city": "Paris",
-    "country": "France",
-    "year": 2026,
-    "month": 5,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Summer of Sport: Winning in an AI-Driven World",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/summer-sport-winning-ai-driven-world",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 6,
-    "role": "CIO"
-  },
-  {
-    "name": "The AI Security Paradigm Shift",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/ai-security-paradigm-shift-0",
-    "city": "Utrecht",
-    "country": "Netherlands",
-    "year": 2026,
-    "month": 7,
-    "role": "CISO"
-  },
-  {
-    "name": "The AI Security Paradigm Shift",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/ai-security-paradigm-shift",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 7,
-    "role": "CISO"
-  },
-  {
-    "name": "Trust is the New Attack Surface \u2014 Executive Breakfast",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/trust-new-attack-surface",
-    "city": "Silverstone",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 7,
-    "role": "CISO"
-  },
-  {
-    "name": "Wimbledon 2026 VIP Hospitality Experience",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/wimbledon-2026-vip-hospitality-experience",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2026,
-    "month": 7,
-    "role": "CMO"
-  },
-  {
-    "name": "Cloudflare Immerse Johannesburg",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/cloudflare-immerse-johannesburg",
-    "city": "Johannesburg",
-    "country": "South Africa",
-    "year": 2026,
-    "month": 7,
-    "role": "CIO / CISO"
-  },
-  {
-    "name": "Cloudflare Immerse Dubai",
-    "host": "ABM Alliance",
-    "hostUrl": "https://abmalliance.com",
-    "url": "https://abmalliance.com/events/cloudflare-immerse-dubai",
-    "city": "Dubai",
-    "country": "United Arab Emirates",
-    "year": 2026,
-    "month": 9,
+    "day": 17,
     "role": "CIO / CISO"
   },
   {
@@ -250,29 +32,104 @@
     "country": "Germany",
     "year": 2026,
     "month": 9,
+    "day": 17,
     "role": "CISO"
   },
   {
-    "name": "Procurement Innovation on Tour: Toronto",
+    "name": "Unlock Secure AI: Copilot, Purview & XDR in 1 Day",
     "host": "Executive Leaders Network",
     "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/ivalua-summit-toronto-q4-26",
-    "city": "Toronto",
-    "country": "Canada",
+    "url": "https://elnevents.com/softwerx-summit-cambridge-q3-26",
+    "city": "Cambridge",
+    "country": "United Kingdom",
     "year": 2026,
-    "month": 10,
-    "role": "CPO"
+    "month": 9,
+    "day": 22,
+    "role": "CISO"
   },
   {
-    "name": "Industry Led Benelux",
-    "host": "Citrus Events",
-    "hostUrl": "https://www.citrusevents.net",
-    "url": "https://www.citrusevents.net/cio-benelux",
-    "city": "Brussels",
-    "country": "Belgium",
+    "name": "An Exclusive Event for Data Leaders",
+    "host": "Executive Leaders Network",
+    "hostUrl": "https://elnevents.com",
+    "url": "https://elnevents.com/precisely-summit-london-q3-26",
+    "city": "London",
+    "country": "United Kingdom",
+    "year": 2026,
+    "month": 9,
+    "day": 22,
+    "role": "CIO"
+  },
+  {
+    "name": "CDAO Government 2026",
+    "host": "Corinium Global Intelligence",
+    "hostUrl": "https://coriniumintelligence.com",
+    "url": "https://cdao-gov.coriniumintelligence.com/",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "year": 2026,
+    "month": 9,
+    "day": 22,
+    "role": "CDO"
+  },
+  {
+    "name": "The Executive Security Breakfast",
+    "host": "Executive Leaders Network",
+    "hostUrl": "https://elnevents.com",
+    "url": "https://elnevents.com/softwerx-executive-breakfast-london-q3-26",
+    "city": "London",
+    "country": "United Kingdom",
+    "year": 2026,
+    "month": 9,
+    "day": 24,
+    "role": "CIO / CISO"
+  },
+  {
+    "name": "TechLeaders Insight Summit \u2014 AI (Autumn Edition)",
+    "host": "GDS Group",
+    "hostUrl": "https://gdsgroup.com",
+    "url": "https://gdsgroup.com/events/physical-summit/tech-leaders-insight-summit-autumn-edition/",
+    "city": "Dublin",
+    "country": "Ireland",
+    "year": 2026,
+    "month": 9,
+    "day": 28,
+    "role": "CIO / CISO"
+  },
+  {
+    "name": "Global CIO & CISO Executive Summit",
+    "host": "Evanta",
+    "hostUrl": "https://www.evanta.com",
+    "url": "https://www.evanta.com/cio/global/global-cio-executive-summit-8435",
+    "city": "Dana Point, CA",
+    "country": "United States",
+    "year": 2026,
+    "month": 9,
+    "day": 28,
+    "role": "CIO / CISO"
+  },
+  {
+    "name": "CxO Institute \u2014 Palo Alto",
+    "host": "CxO Institute",
+    "hostUrl": "https://cxo-institute.com",
+    "url": "https://cxo-institute.com/upcoming-events/",
+    "city": "Palo Alto",
+    "country": "United States",
+    "year": 2026,
+    "month": 9,
+    "day": 30,
+    "role": "CIO / CISO"
+  },
+  {
+    "name": "TechLeaders Insight Summit \u2014 Security",
+    "host": "GDS Group",
+    "hostUrl": "https://gdsgroup.com",
+    "url": "https://gdsgroup.com/events/summit/",
+    "city": "Dublin",
+    "country": "Ireland",
     "year": 2026,
     "month": 10,
-    "role": "CIO"
+    "day": 12,
+    "role": "CISO"
   },
   {
     "name": "CxO Institute \u2014 New York",
@@ -283,18 +140,20 @@
     "country": "United States",
     "year": 2026,
     "month": 10,
+    "day": 13,
     "role": "CIO / CISO"
   },
   {
-    "name": "CreatorIQ Connect",
-    "host": "Executive Leaders Network",
-    "hostUrl": "https://elnevents.com",
-    "url": "https://elnevents.com/creatoriq-summit-la-q4-26",
-    "city": "Los Angeles",
-    "country": "United States",
+    "name": "Industry Led Benelux",
+    "host": "Citrus Events",
+    "hostUrl": "https://www.citrusevents.net",
+    "url": "https://www.citrusevents.net/cio-benelux",
+    "city": "Brussels",
+    "country": "Belgium",
     "year": 2026,
     "month": 10,
-    "role": "CMO"
+    "day": 21,
+    "role": "CIO"
   },
   {
     "name": "Cyber Squeeze UK & I",
@@ -305,40 +164,8 @@
     "country": "United Kingdom",
     "year": 2026,
     "month": 11,
+    "day": 3,
     "role": "CISO"
-  },
-  {
-    "name": "Cyber Squeeze Nordics",
-    "host": "Citrus Events",
-    "hostUrl": "https://www.citrusevents.net",
-    "url": "https://www.citrusevents.net/cybersqueezenordics",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "year": 2026,
-    "month": 11,
-    "role": "CISO"
-  },
-  {
-    "name": "CIO UK & I",
-    "host": "Citrus Events",
-    "hostUrl": "https://www.citrusevents.net",
-    "url": "https://www.citrusevents.net/cioukandi",
-    "city": "London",
-    "country": "United Kingdom",
-    "year": 2027,
-    "month": 3,
-    "role": "CIO"
-  },
-  {
-    "name": "CIO Nordics",
-    "host": "Citrus Events",
-    "hostUrl": "https://www.citrusevents.net",
-    "url": "https://www.citrusevents.net/cionordics",
-    "city": "Stockholm",
-    "country": "Sweden",
-    "year": 2027,
-    "month": 4,
-    "role": "CIO"
   },
   {
     "name": "CxO Institute \u2014 London",
@@ -349,6 +176,7 @@
     "country": "United Kingdom",
     "year": 2026,
     "month": 11,
+    "day": 4,
     "role": "CIO / CISO"
   },
   {
@@ -360,7 +188,20 @@
     "country": "United States",
     "year": 2026,
     "month": 11,
+    "day": 18,
     "role": "CIO / CISO"
+  },
+  {
+    "name": "Cyber Squeeze Nordics",
+    "host": "Citrus Events",
+    "hostUrl": "https://www.citrusevents.net",
+    "url": "https://www.citrusevents.net/cybersqueezenordics",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "year": 2026,
+    "month": 11,
+    "day": 24,
+    "role": "CISO"
   },
   {
     "name": "CxO Institute \u2014 San Francisco",
@@ -371,7 +212,20 @@
     "country": "United States",
     "year": 2027,
     "month": 2,
+    "day": 24,
     "role": "CIO / CISO"
+  },
+  {
+    "name": "CIO UK & I",
+    "host": "Citrus Events",
+    "hostUrl": "https://www.citrusevents.net",
+    "url": "https://www.citrusevents.net/cioukandi",
+    "city": "London",
+    "country": "United Kingdom",
+    "year": 2027,
+    "month": 3,
+    "day": 2,
+    "role": "CIO"
   },
   {
     "name": "CxO Institute \u2014 Oxford",
@@ -382,6 +236,7 @@
     "country": "United Kingdom",
     "year": 2027,
     "month": 3,
+    "day": 4,
     "role": "CIO / CISO"
   },
   {
@@ -393,6 +248,19 @@
     "country": "United States",
     "year": 2027,
     "month": 3,
+    "day": 24,
     "role": "CIO / CISO"
+  },
+  {
+    "name": "CIO Nordics",
+    "host": "Citrus Events",
+    "hostUrl": "https://www.citrusevents.net",
+    "url": "https://www.citrusevents.net/cionordics",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "year": 2027,
+    "month": 4,
+    "day": 13,
+    "role": "CIO"
   }
 ]
