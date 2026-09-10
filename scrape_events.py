@@ -49,6 +49,7 @@ OUTPUT_PATH = Path(__file__).parent.parent / "events.json"
 
 DINNER_WORDS = ["dinner", "jantar", "gala"]
 VIRTUAL_WORDS = ["virtual", "webinar", "digital event", "online"]
+EXCLUDED_ROLES = ["cpo", "procurement"]  # tracked out of scope — filtered post-hoc below
 
 MONTHS = {m.lower(): i for i, m in enumerate(
     ["January","February","March","April","May","June",
@@ -65,11 +66,16 @@ class Event:
     country: str
     year: int
     month: int
+    day: int = 1
     role: str = "CIO / CISO"
 
     def is_dinner(self) -> bool:
         blob = self.name.lower()
         return any(w in blob for w in DINNER_WORDS)
+
+    def is_procurement(self) -> bool:
+        blob = (self.name + " " + self.role).lower()
+        return any(w in blob for w in EXCLUDED_ROLES)
 
 
 def fetch(url: str, tag: str) -> str:
@@ -82,21 +88,22 @@ def fetch(url: str, tag: str) -> str:
 
 
 def parse_date_fragment(text: str):
-    """Find a 'Nth Month YYYY' or 'Month Nth YYYY' style date in free text."""
+    """Find a 'Nth Month YYYY' or 'Month Nth YYYY' style date in free text.
+    Returns (year, month, day) or None."""
     m = re.search(
         r"(\d{1,2})(?:st|nd|rd|th)?\s+(January|February|March|April|May|June|July|"
         r"August|September|October|November|December)\s+(\d{4})",
         text, re.IGNORECASE)
     if m:
         month = MONTHS[m.group(2).lower()]
-        return int(m.group(3)), month
+        return int(m.group(3)), month, int(m.group(1))
     m = re.search(
         r"(January|February|March|April|May|June|July|August|September|"
         r"October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})",
         text, re.IGNORECASE)
     if m:
         month = MONTHS[m.group(1).lower()]
-        return int(m.group(3)), month
+        return int(m.group(3)), month, int(m.group(2))
     return None
 
 
@@ -128,11 +135,11 @@ def scrape_citrus_events():
                 break
         if not found:
             continue
-        year, month = found
+        year, month, day = found
         events.append(Event(
             name=title, host=host, hostUrl=host_url,
             url=host_url,  # per-event slugs are in the nav; refine manually if needed
-            city="", country="", year=year, month=month, role="CIO / CISO",
+            city="", country="", year=year, month=month, day=day, role="CIO / CISO",
         ))
     return events
 
@@ -156,14 +163,14 @@ def scrape_abm_alliance():
         date = parse_date_fragment(text_block)
         if not date:
             continue
-        year, month = date
+        year, month, day = date
         link_el = card.find("a", href=True)
         url = link_el["href"] if link_el else host_url
         if url.startswith("/"):
             url = host_url + url
         events.append(Event(
             name=title, host=host, hostUrl=host_url, url=url,
-            city="", country="", year=year, month=month, role="CIO / CISO",
+            city="", country="", year=year, month=month, day=day, role="CIO / CISO",
         ))
     return events
 
@@ -191,11 +198,11 @@ def scrape_gds_group(max_pages=9):
             date = parse_date_fragment(text_block)
             if not date:
                 continue
-            year, month = date
+            year, month, day = date
             title = text_block.split("20")[0].strip()[:90]
             events.append(Event(
                 name=title, host=host, hostUrl=host_url, url=a["href"],
-                city="", country="", year=year, month=month, role="CIO / CISO",
+                city="", country="", year=year, month=month, day=day, role="CIO / CISO",
             ))
         time.sleep(1)
     return events
@@ -208,8 +215,44 @@ JS_RENDERED_HOSTS = {
     "CxO Institute": "https://cxo-institute.com/events",
     "The Millennium Alliance": "https://mill-all.com/assemblies/",
     "Apex Assembly": "https://apexassembly.com/",
+    "CXO Sync": "https://cxo-sync.com/events",
+    "CIONET": "https://www.cionet.com/events",
+    "The Network Group": "https://thenetwork-group.com/events/",
+    "Hot Topics": "https://hottopics.ht/events/meetups",
+    "Aurora Live": "https://www.auroralive.com/events",
+    "GBI Impact": "https://www.gbiimpact.com/summits",
+    "Meet The Boss": "https://meettheboss.com/events/",
+    "HMG Strategy": "https://hmgstrategy.com/events/",
+    "IQPC": "https://www.iqpc.com/events-meetings",
+    "EDS": "https://edsxevents.com/",
+    "Executive Leaders Network": "https://elnevents.com/calendar",
+    "ConvergeX Connections": "https://convergexconnections.com/executive-dinners",
+    "Evanta": "https://www.evanta.com/calendar",
+    "Corinium Global Intelligence": "https://www.coriniumintelligence.com/events-calendar",
+    "Argyle Executive Forum": "https://argyleforum.com/events-landing/",
+    "Foundry": "https://foundryco.com/events_type/in-person/",
+    "Rela8 Group": "https://rela8group.com/",
+    "Quartz Network": "https://quartznetwork.com/events",
+    "CXO Inc.": "https://cxo.inc/",
+    "Inspired Business Media": "https://www.inspiredbusinessmedia.com/",
+    "ProGathers": "https://www.progathers.com/",
+    "Richmond Events": "https://richmondevents.com/",
+    "IDC": "https://event.idc.com/upcoming-events/",
 }
-
+# Note on "Executive Leaders Network": this one actively blocked a plain HTTP
+# fetch during development. It's left in this list because a real headless
+# browser sometimes gets past basic bot detection that a raw request can't —
+# but don't be surprised if it keeps returning zero events. If it does,
+# that's a genuine block, not a bug in this script.
+#
+# The 11 URLs added in this batch (Evanta through IDC) were found via web
+# search rather than by opening each site myself, so some are homepage/best-
+# guess landing pages rather than confirmed dedicated calendar pages — check
+# scraper/debug/*.html after the first run to see whether each one actually
+# lands on a page listing real events, and swap in a better URL if not.
+#
+# Hosts still NOT in this list (by request — excluded from tracking):
+# The Leadership Board, Questex, The Ortus Club, Strategy Insights.
 
 def scrape_js_rendered():
     """Best-effort Playwright pass for JS-only sites. Requires:
@@ -237,18 +280,28 @@ def scrape_js_rendered():
             safe = re.sub(r"\W+", "_", host.lower())
             (DEBUG_DIR / f"{safe}.html").write_text(html, encoding="utf-8")
             soup = BeautifulSoup(html, "html.parser")
+            # Strip obvious page furniture before searching, so date-matching
+            # doesn't pick up a footer copyright year or cookie-banner date.
+            for junk in soup.select("footer, [class*='cookie'], [id*='cookie'], nav"):
+                junk.decompose()
             for heading in soup.find_all(["h2", "h3"]):
                 title = heading.get_text(strip=True)
-                if not title:
+                if not title or len(title) > 120:
+                    continue
+                if re.search(r"^\s*(©|copyright|all rights reserved)", title, re.IGNORECASE):
                     continue
                 nearby = heading.find_next(string=re.compile(r"\d{4}"))
                 date = parse_date_fragment(str(nearby)) if nearby else None
                 if not date:
                     continue
-                year, month = date
+                year, month, day = date
+                # Sanity check: reject obviously-wrong years (e.g. a footer
+                # "© 2020" caught anyway, or a typo'd far-future year)
+                if year < 2026 or year > 2028:
+                    continue
                 events.append(Event(
                     name=title, host=host, hostUrl=url, url=url,
-                    city="", country="", year=year, month=month,
+                    city="", country="", year=year, month=month, day=day,
                 ))
         browser.close()
     return events
@@ -274,9 +327,9 @@ def main():
             print(f"  ! {fn.__name__} failed:")
             traceback.print_exc()
 
-    # Drop dinners, drop anything missing a city (parser failed to find one —
-    # better to omit than publish a wrong/blank listing)
-    clean = [e for e in all_events if not e.is_dinner()]
+    # Drop dinners and procurement/CPO events, drop anything missing a city
+    # (parser failed to find one — better to omit than publish a wrong/blank listing)
+    clean = [e for e in all_events if not e.is_dinner() and not e.is_procurement()]
 
     payload = [asdict(e) for e in clean]
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
